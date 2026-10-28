@@ -1,0 +1,38 @@
+name: Package skill
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check SKILL.md frontmatter
+        run: |
+          head -1 opensonic-admin-training/SKILL.md | grep -qx -- '---'
+          grep -q '^name: opensonic-admin-training$' opensonic-admin-training/SKILL.md
+          grep -q '^description: ' opensonic-admin-training/SKILL.md
+
+      - name: Zip
+        run: zip -r opensonic-admin-training.zip opensonic-admin-training
+
+      - name: Publish release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: opensonic-admin-training.zip
+          generate_release_notes: true
+
+      - name: Keep zip as artifact (manual runs)
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: opensonic-admin-training
+          path: opensonic-admin-training.zip
