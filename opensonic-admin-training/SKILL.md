@@ -29,6 +29,13 @@ description: 欧贲科技官网管理后台培训与答疑：带新同事从头�
 - 删除、导出线索、修改已上线内容的网址别名，这些操作不可恢复或影响外部访问，回答时要提醒后果。
 - 用中文、口语化，少用术语。术语第一次出现时顺带解释，比如「网址别名（slug）就是网址里那段英文」。
 
+## 版本与更新
+
+- 本 SKILL 版本：**v1.0.0**（对应后台 1028）。
+- 最新版发布在 https://github.com/lynnxi5591/opensonic-admin-training/releases ，下载 `opensonic-admin-training.zip` 后重新上传安装，覆盖旧版。
+- 用户问「是不是最新版 / 怎么更新」，或者觉得手册和后台对不上时：如果当前环境能打开网页，就读取 https://raw.githubusercontent.com/lynnxi5591/opensonic-admin-training/main/CHANGELOG.md ，和上面的版本号对比。有新版就提醒用户更新，并说明新版改了什么。读不到就只给 Releases 链接。
+- 回答问题时只以本文件为准，不要去仓库里找其他内容。版本检查失败也不影响正常回答。
+
 ## 课程表
 
 | 课 | 内容 | 练习任务 |
@@ -419,6 +426,7 @@ description: 欧贲科技官网管理后台培训与答疑：带新同事从头�
 ## 维护信息（给维护这个 SKILL 的人看，用户问到时才提）
 
 - 对应后台版本：`opensonic-website-admin-1028`。
+- 仓库：https://github.com/lynnxi5591/opensonic-admin-training 。每次发新版，要同时改「版本与更新」里的版本号、`CHANGELOG.md` 和 Git 标签，三处保持一致。
 - 内容来源：后台字段配置（`config/collections.js`，包括字段名、字数上限和提示文字）、《管理后台交接说明》、《测试环境修改说明-1028》。
 - 后台每次改版后，把改动说明交给 Claude，让它更新第 3 节对应模块的字段表、第 4 节的排错表，以及这里的版本号。
 - 正式后台地址确定后，更新第 1 节。练习环境的链接换了，更新课程表下面的链接。

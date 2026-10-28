@@ -28,7 +28,7 @@ CHANGELOG.md      每次更新记一行，和后台版本对应
 后台每次改版：
 
 1. 在 Claude 的「OB 官网设计」项目里，把新的修改说明交给 Claude，让它更新 `opensonic-admin-training/SKILL.md`。
-2. 在 `CHANGELOG.md` 加一行，把 SKILL.md 末尾「维护信息」里的版本号一起改掉。
+2. 在 `CHANGELOG.md` 加一行，同时改掉 SKILL.md 里「版本与更新」的版本号。两处要一致，同事那边的 Claude 靠这个判断有没有新版。
 3. 提交后打标签，比如 `v1.1.0`。GitHub 会自动打包 zip 发布到 Releases。
 4. 通知同事重新下载安装，覆盖旧版本。
 
