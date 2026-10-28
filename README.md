@@ -7,6 +7,7 @@
 ```
 opensonic-admin-training/
   SKILL.md        SKILL 本体（回答方式 + 操作手册 + 排错表），只改这一个文件
+screenshots/       各页面截图（红框标出菜单位置），SKILL 回答时附链接
 CHANGELOG.md      每次更新记一行，和后台版本对应
 .github/workflows/release.yml   打 v 开头的标签时，自动打包 zip 发到 Releases
 ```
